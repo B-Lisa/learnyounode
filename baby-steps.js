@@ -1,1 +1,1 @@
-console.log(+process.argv[2,3,4])
+console.log(process.argv.reduce(2))
