@@ -1,1 +1,2 @@
-console.log(process.argv.reduce(2))
+let numbers = process.argv.reduce(2);
+console.log(numbers);
