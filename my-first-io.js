@@ -1,4 +1,5 @@
-const fs = require('fs');
-const newFile = fs.readFileSync('/workspace/learnyounode/my-first-io.js');
-const str = newFile.toString();
-console.log(str);
+var fs = require('fs');
+var buf = fs.readFileSync(process.argv[2]);
+var str = buf.toString();
+var strArr = str.split('\n');
+console.log(strArr.length);
