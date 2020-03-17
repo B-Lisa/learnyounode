@@ -1,16 +1,14 @@
-    const fs = require('fs')
-    const path = require('path')
-    
-    const folder = process.argv[2]
-    const ext = '.' + process.argv[3]
-    
-   const module = fs.readdir(folder, function (err, files) {
-      if (err) return console.error(err)
-      files.forEach(function (file) {
-        if (path.extname(file) === ext) {
-          console.log(file)
-        }
-      })
-    })
+   var fs = require('fs');
+var path = require('path');
 
-    module.exports = function (args){}
+module.exports = function (directory, extension, callback) {
+    fs.readdir(directory, function (err, list) {
+        if (err) return callback(err);
+        else {
+            list = list.filter(function (file) {
+                if(path.extname(file) === '.' + extension) return true;
+            })
+            return callback(null, list);
+        }
+    })
+}
