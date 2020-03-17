@@ -1,8 +1,6 @@
-var ext = 'dat'
-var filenames = [ 'somefile.dat', 'anotherfile.txt', 'bogusfiledat', 'goodfile.dat' ]
+var filenames = fs.readdir('/workspace/learnyounode', '.md')
 
-ext = '.' + ext
 var results = filenames.filter(function (f) {
-  return f.substr(-(ext.length)) == ext
+  return f.substr(-(filenames.length)) == md
 })
-console.log('results:', results)
+console.log(results)
