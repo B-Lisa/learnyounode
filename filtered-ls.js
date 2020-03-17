@@ -1,3 +1,4 @@
+var fs = require('fs')
 var filenames = fs.readdir('/workspace/learnyounode', '.md')
 
 var results = filenames.filter(function (f) {
