@@ -1,8 +1,7 @@
-let fs = require ('fs');
-let file = fs.readFile(process.argv[2], {encoding: 'utf8'}.split('\n').length - 1);
+var fs = require('fs');
+var path = process.argv[2];
 
-function callback (err, data) {}
-callback()
-
-console.log(file);
-console.log(callback)
+fs.readFile(path, 'utf8', function(err,data) {
+  var lines = data.split('\n');
+  console.log(lines.length-1);
+});
