@@ -1,7 +1,17 @@
 var fs = require('fs')
-var filenames = fs.readdir('/workspace/learnyounode', '.md')
+var test = undefined
+path = process.argv[2]
+type = process.argv[3]
 
-var results = filenames.filter(function (f) {
-  return f.substr(-(filenames.length)) == md
+function takobaba (path, type){
+        fs.readdir(path, function reddir(err, filelist){
+        for (i=0; i < filelist.length; i++) {
+        ftype = filelist[i].split('.')
+        if (ftype[1] == type){
+                console.log(filelist[i])
+        }
+}
 })
-console.log(results)
+}
+
+takobaba(path, type)
