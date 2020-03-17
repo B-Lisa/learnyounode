@@ -1,17 +1,14 @@
-var fs = require('fs')
-var test = undefined
-path = process.argv[2]
-type = process.argv[3]
-
-function takobaba (path, type){
-        fs.readdir(path, function reddir(err, filelist){
-        for (i=0; i < filelist.length; i++) {
-        ftype = filelist[i].split('.')
-        if (ftype[1] == type){
-                console.log(filelist[i])
+    const fs = require('fs')
+    const path = require('path')
+    
+    const folder = process.argv[2]
+    const ext = '.' + process.argv[3]
+    
+    const module = fs.readdir(folder, function (err, files) {
+      if (err) return console.error(err)
+      files.forEach(function (file) {
+        if (path.extname(file) === ext) {
+          console.log(file)
         }
-}
-})
-}
-
-takobaba(path, type)
+      })
+    })
